@@ -33,25 +33,7 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
-        // PSUEDO CODE:
-        // create a conditional that determines if the first letter in the word is the first vowel from the vowelsArray
-        // split the word into an array of single string characters and store in a variable, singleChars
-        // remove the first character of singleChars array
-        // add the first vowel of the vowelsArray to the end of the singleChars array
-        // add the string "way" to the end of the singleChars array
-        // combine singleChars back into a string and reassign it as the value of eachWord
-
-
-      /* FIRST CHARACTER IS A VOWEL */
-      if (eachWord[0] === vowelsArray[0]) { // if beginning of string is the same as first vowel character in vowelsArray is TRUE
-        let singleChars = eachWord.split(""); // turns the string array element into an array of single string characters
-        // singleChars.shift() // removes the first letter in the word
-        // singleChars.push(vowelsArray[0]) // add the first vowel to the end of the singleChars Array
-        singleChars.push("way") // adds the string way to end of singleChars Array
-        eachWord = singleChars.join("")// convert eachWord to a string
-      }
       
-
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
