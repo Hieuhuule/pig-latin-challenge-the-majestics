@@ -5,39 +5,57 @@ import butcherPigImage from './assets/butcherPig.jpeg'
 const App = () => {
 
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState("apple through queen squeal fry fluent")
-  const [inputTranslated, setInputTranslated] = useState("")
+  const [userInput, setUserInput] = useState("apple through queen squeal fry fluent") // creates a default value for the userInput and allows you to change it with setUserInput
+  const [inputTranslated, setInputTranslated] = useState("") // creates an empty string as the value for inputTranslated and allows you to change it wtih setUserInput
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
-  const myPigLatinCodeHere = () => {
+  const myPigLatinCodeHere = () => { // declares the function 
 
     // NO MODIFICATION NEEDED: the variable "arrayOfUserInput" will contain the text input from the user split into an array of words
-    const arrayOfUserInput = userInput.split(" ")
-    console.log("arrayOfUserInput:", arrayOfUserInput)
+    const arrayOfUserInput = userInput.split(" ") // takes a string and splits it into an array of strings and stores it in arrayOfUserInput
+    console.log("arrayOfUserInput:", arrayOfUserInput) // console logs the array name and the stored array in arrayOfUserInput
 
     // NO MODIFICATION NEEDED: now that we have an array of words, we can map over the array and look at each word
-    const translatedWordsArray = arrayOfUserInput.map(eachWord => {
-      console.log("eachWord:", eachWord)
+    const translatedWordsArray = arrayOfUserInput.map(eachWord => { // iterates over each element in arrayOfUserInput and stores the new array in translatedWordsArray
+      console.log("eachWord:", eachWord) // console logs each element of the translatedWordsArray as it iterates, value of eachWord is an array
 
       // NO MODIFICATION NEEDED: this code will look at each word and identify the vowels
-      const vowelsArray = eachWord.split("").filter(vowel => {
+      const vowelsArray = eachWord.split("").filter(vowel => { // splits the element at each iteration into single string characters and then returns a new array of vowels
         return (
-          vowel === "a" || 
-          vowel === "e" || 
-          vowel === "i" || 
-          vowel === "o" || 
+          vowel === "a" ||
+          vowel === "e" ||
+          vowel === "i" ||
+          vowel === "o" ||
           vowel === "u"
         )
       })
-      console.log("vowelsArray:", vowelsArray)
+      console.log("vowelsArray:", vowelsArray) // console logs the vowels in eachWord as an array
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
-    
+        // PSUEDO CODE:
+        // create a conditional that determines if the first letter in the word is the first vowel from the vowelsArray
+        // split the word into an array of single string characters and store in a variable, singleChars
+        // remove the first character of singleChars array
+        // add the first vowel of the vowelsArray to the end of the singleChars array
+        // add the string "way" to the end of the singleChars array
+        // combine singleChars back into a string and reassign it as the value of eachWord
+
+
+      /* FIRST CHARACTER IS A VOWEL */
+      if (eachWord[0] === vowelsArray[0]) { // if beginning of string is the same as first vowel character in vowelsArray is TRUE
+        let singleChars = eachWord.split(""); // turns the string array element into an array of single string characters
+        // singleChars.shift() // removes the first letter in the word
+        // singleChars.push(vowelsArray[0]) // add the first vowel to the end of the singleChars Array
+        singleChars.push("way") // adds the string way to end of singleChars Array
+        eachWord = singleChars.join("")// convert eachWord to a string
+      }
+      
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
+
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
     const translatedWords = translatedWordsArray.join(" ")
