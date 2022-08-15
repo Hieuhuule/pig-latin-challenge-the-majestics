@@ -1,0 +1,60 @@
+* {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+/* ---HEADER--- */
+
+h1 {
+  font-size: 4rem;
+}
+
+.butcher-pig-image {
+  margin: 1rem;
+  width: 14rem;
+}
+
+/* ---BODY--- */
+
+button {
+  border-radius: 0.9rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.input-section {
+  background-color: grey;
+  border-radius: .5rem;
+  color: #fff;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.user-input {
+  border-radius: .5rem;
+  font-size: 1rem;
+  height: 3rem;
+  width: 30rem;
+}
+
+/* ---FOOTER--- */
+
+footer {
+  bottom: 0;
+  margin-bottom: 1rem;
+  position: fixed;
+  width: 100%;
+}
+
+@media only screen and (max-width: 650px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .user-input {
+    font-size: 1rem;
+    height: 5rem;
+    padding: 1rem;
+    text-align: center;
+    width: 90%;
+  }
+}
