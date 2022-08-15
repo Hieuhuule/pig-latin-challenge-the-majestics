@@ -33,11 +33,31 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
+        // PSUEDO CODE:
+        // iterate over an array to see if the value at index[0] is a vowel
+          // if true, return the string and concat + "way"
+        // use to lowercase to fix capitalization edge case
+        const firstLetterIsVowel = (arr) => {
+          for (let i = 0; i < arr[i]; i++) {
+          if (
+          arr[i][0] === "a" || 
+          arr[i][0] === "e" || 
+          arr[i][0] === "i" || 
+          arr[i][0] === "o" || 
+          arr[i][0] === "u") {
+            return arr[i] + "way"
+          }
+        }
+      }
     
+      console.log(firstLetterIsVowel(translatedWordsArray))
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
+
+        
+      
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
     const translatedWords = translatedWordsArray.join(" ")
