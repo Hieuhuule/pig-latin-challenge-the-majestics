@@ -33,6 +33,23 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
+      const vowels = ["a", "e", "i", "o", "u", "y"]
+      const firstLetterIsVowel = (word) => {
+        let consonants = ""
+        if (vowels.includes(word[0])) { // first letter equals a vowel
+            eachWord = word + "way"
+      } else {
+        for (let i = 0; i < eachWord.length; i++) {
+          if (vowels.includes(eachWord[i])) {
+            break;
+          }
+          consonants += eachWord[i]
+        }
+        eachWord = word.substring(consonants.length) + consonants + "ay"
+      }
+    }
+    firstLetterIsVowel(eachWord)
+
       
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
