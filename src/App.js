@@ -37,20 +37,14 @@ const App = () => {
         // iterate over an array to see if the value at index[0] is a vowel
           // if true, return the string and concat + "way"
         // use to lowercase to fix capitalization edge case
-        const firstLetterIsVowel = (arr) => {
-          for (let i = 0; i < arr[i]; i++) {
+        const firstLetterIsVowel = (word) => {
           if (
-          arr[i][0] === "a" || 
-          arr[i][0] === "e" || 
-          arr[i][0] === "i" || 
-          arr[i][0] === "o" || 
-          arr[i][0] === "u") {
-            return arr[i] + "way"
-          }
+            word[0] === "a" || word[0] === "e" || word[0] === "i" || word[0] === "o" || word[0] === "u"
+            ) {
+              return word + "way"
         }
       }
-    
-      console.log(firstLetterIsVowel(translatedWordsArray))
+    console.log(firstLetterIsVowel(eachWord))
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
