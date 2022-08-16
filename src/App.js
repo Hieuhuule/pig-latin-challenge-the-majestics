@@ -32,23 +32,30 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray) // console logs the vowels in eachWord as an array
 
       // ACTION ITEM: your Pig Latin logic goes here!
+      // 4 conditional statements
+      
+      let firstIndexOfVowel = eachWord.indexOf(vowelsArray[0])
 
-      const vowels = ["a", "e", "i", "o", "u", "y"]
-      const firstLetterIsVowel = (word) => {
-        let consonants = ""
-        if (vowels.includes(word[0])) { // first letter equals a vowel
-            eachWord = word + "way"
-      } else {
-        for (let i = 0; i < eachWord.length; i++) {
-          if (vowels.includes(eachWord[i])) {
-            break;
-          }
-          consonants += eachWord[i]
-        }
-        eachWord = word.substring(consonants.length) + consonants + "ay"
+      if (vowelsArray.includes(eachWord[0])){
+        eachWord = eachWord + "way"
+      } else if (eachWord[firstIndexOfVowel] === "u" && eachWord[firstIndexOfVowel - 1] === "q") {
+        let beforeQu = eachWord.slice(0, firstIndexOfVowel + 1)
+        let afterQu = eachWord.slice(firstIndexOfVowel + 1)
+        eachWord = afterQu + beforeQu + "ay"
       }
-    }
-    firstLetterIsVowel(eachWord)
+       else if (firstIndexOfVowel > 0) {  // if there are multiple consonants in front of vowel
+        let firstPart = eachWord.slice(0, firstIndexOfVowel)
+        let secondPart = eachWord.slice(firstIndexOfVowel)
+        eachWord = secondPart + firstPart + "ay"
+      } else if (eachWord[0] !== "y" && eachWord.includes("y")) { // first letter is not y, but there is a y present ---- solves "fry"
+        let yIndex = eachWord.indexOf("y")
+        let beforeY = eachWord.slice(0, yIndex)
+        let afterY = eachWord.slice(yIndex)
+        eachWord = afterY + beforeY + "ay"
+        console.log("first:", eachWord)
+      }
+      
+
 
       
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
