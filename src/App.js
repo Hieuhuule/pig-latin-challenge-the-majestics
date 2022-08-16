@@ -109,7 +109,7 @@ const App = () => {
         <button onClick={restartGame}>Clear</button>
       </div>
       <p>{inputTranslated}</p>
-      <footer>&copy; 2022 | Coded by: Your Names Here!</footer>
+      <footer>&copy; 2022 | Coded by: Hieu, Clifford, and Daniel</footer>
     </>
   )
 }
